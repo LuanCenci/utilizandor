@@ -1,0 +1,21 @@
+bhaskara <- function(a,b,c){
+  
+  raizes <- c() #Carregando o vetor para carregar as raizes
+  
+  delta <- (b ^ 2) - 4 * a * c #calcular o delta da equação
+  
+  if(delta >= 0){ # evitar que seja feita a raiz de numero negativo
+    raiz <- sqrt(delta) #raiz
+    
+    x1 <- (-b + raiz) / (2 * a) # raiz positiva
+    
+    x2 <- (-b - raiz) / (2 * a) # raiz negativa
+    
+    raizes <- c(x1,x2) # carregando as raizes
+    
+    return(raizes) retornando a função
+    
+  }else{
+    cat("delta é negativo") # caso a função seja negativa avisar o usuário
+  } 
+}
