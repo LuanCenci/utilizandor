@@ -1,0 +1,60 @@
+desvioPadrao <- function(x){
+  
+  n <- length(x)
+  media <- mean(x)
+  soma <- 0
+  i <- 1
+  
+  for ( i in i:n) {
+    soma = soma + ((x[i] - media)^2)
+  }
+  
+  v <- soma / n
+  
+  dp <- sqrt(v)
+  
+  return(dp)
+}
+
+variancia <- function(x){
+  
+  n <- length(x)
+  media <- mean(x)
+  soma <- 0
+  x1 <- 0
+  i <- 1
+  
+  for ( i in i:n) {
+    x1 <- (x[i] - media)^2
+    soma = soma + x1
+    x1 <- 0
+  }
+  
+  v <- soma / n
+  
+  return(v)
+}
+
+mediaPonderada <- function(x,p){
+  
+  if(length(x) == length(p)){
+    
+    n <- length(x)
+    xp <- (x*p)
+    
+    soma <- 0
+    somaPesos <- 0
+    
+    for(i in 1:n){
+      soma <- soma + xp[i]
+      somaPesos <- somaPesos + p[i]
+      
+    }
+    
+    media <- soma / somaPesos
+    return(media)
+  }else{
+    cat("vetores tem que ter o mesmo tamanho")
+  }
+  
+}
